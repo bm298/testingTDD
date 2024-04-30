@@ -12,16 +12,17 @@ class CompassTest {
     void rotate() {
         assertAll(
 
+                // NORTH
                 () -> assertEquals(Compass.Point.EAST, Compass.rotate(Compass.Point.NORTH, Compass.Direction.RIGHT)),
-                assertEquals(Compass.Point.SOUTH, Compass.rotate(Compass.Point.EAST, Compass.Direction.RIGHT)),
-                assertEquals(Compass.Point.WEST, Compass.rotate(Compass.Point.SOUTH, Compass.Direction.RIGHT)),
-                assertEquals(Compass.Point.EAST, Compass.rotate(Compass.Point.NORTH, Compass.Direction.RIGHT)),
-                assertEquals(Compass.Point.SOUTH, Compass.rotate(Compass.Point.EAST, Compass.Direction.RIGHT)),
-                assertEquals(Compass.Point.WEST, Compass.rotate(Compass.Point.SOUTH, Compass.Direction.RIGHT)),
-                assertEquals(Compass.Point.EAST, Compass.rotate(Compass.Point.NORTH, Compass.Direction.RIGHT)),
-                assertEquals(Compass.Point.SOUTH, Compass.rotate(Compass.Point.EAST, Compass.Direction.RIGHT)),
-                assertEquals(Compass.Point.NORTH, Compass.rotate(Compass.Point.SOUTH, Compass.Direction.RIGHT)),
-                /* ... include all the other possible assertions here */
-        );
+                () -> assertEquals(Compass.Point.WEST, Compass.rotate(Compass.Point.NORTH, Compass.Direction.LEFT)),
+                // SOUTH
+                () -> assertEquals(Compass.Point.WEST, Compass.rotate(Compass.Point.SOUTH, Compass.Direction.RIGHT)),
+                () -> assertEquals(Compass.Point.EAST, Compass.rotate(Compass.Point.SOUTH, Compass.Direction.LEFT)),
+                // EAST
+                () -> assertEquals(Compass.Point.SOUTH, Compass.rotate(Compass.Point.EAST, Compass.Direction.RIGHT)),
+                () -> assertEquals(Compass.Point.NORTH, Compass.rotate(Compass.Point.EAST, Compass.Direction.LEFT)),
+                // WEST
+                () -> assertEquals(Compass.Point.NORTH, Compass.rotate(Compass.Point.WEST, Compass.Direction.RIGHT)),
+                () -> assertEquals(Compass.Point.SOUTH, Compass.rotate(Compass.Point.WEST, Compass.Direction.LEFT)));
     }
 }
