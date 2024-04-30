@@ -11,7 +11,7 @@ class StringManipulatorTest {
         StringManipulator stringManipulator= new StringManipulator();
         assertAll(
         () -> assertNotEquals("batman", new StringManipulator().reverseString("namtab")),
-        () -> assertEquals("2racecar", new StringManipulator().reverseString("racecar2") ),
+        () -> assertEquals("2racecar", new StringManipulator().reverseString("racecar2")),
                 () -> assertEquals("pop", new StringManipulator().reverseString("pop"))
         );
     }
