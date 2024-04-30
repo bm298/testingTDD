@@ -8,9 +8,9 @@ class StringManipulatorTest {
 
     @Test
     void reverseString() {
-        StringManipulator strinmanipulator= new StringManipulator();
+        StringManipulator stringManipulator= new StringManipulator();
         assertAll(
-        () -> assertNotEquals("batman", new StringManipulator().reverseString("numtab")),
+        () -> assertNotEquals("batman", new StringManipulator().reverseString("namtab")),
         () -> assertEquals("2racecar", new StringManipulator().reverseString("racecar2") ),
                 () -> assertEquals("pop", new StringManipulator().reverseString("pop"))
         );
@@ -19,9 +19,9 @@ class StringManipulatorTest {
     @Test
     void isPalindrome() {
         assertAll(
-                () -> assertNotEquals("batman", "namtab" , "NOT palindrome"),
-                () -> assertEquals("racecarfds", "racecar" , "is palindrome"),
-                () -> assertEquals("pop", "pop" , "is palindrome")
+                () -> assertNotEquals(true, new StringManipulator().isPalindrome("namtab") , "NOT palindrome"),
+                () -> assertEquals(true, new StringManipulator().isPalindrome("racecar") , "is palindrome"),
+                () -> assertEquals(true, new StringManipulator().isPalindrome("pop") , "is palindrome")
         );
     }
 }
